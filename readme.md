@@ -28,5 +28,6 @@ Fait la différence entre les étudiants associés au rôle et ceux ayant réagi
 ### Limitations
 
 Limitations de cette version.
-* Un seul appel à la fois.
+* ~~Un seul appel à la fois.~~ => Normalement possible. A tester avec plusieurs enseignants en //
 * ~~Les groupes ne sont pas remis à jour. Il faudrait ajouter un pointage des membres d'un groupe à chaque lancement d'appel.~~ => Corrigé. Les étudiants d'un rôle sont listés à chaque appel.
+* Certains utilisateurs ne semblent pas bien remonter selon les rôles.
