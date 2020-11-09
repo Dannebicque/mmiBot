@@ -8,6 +8,7 @@ module.exports = {
           .then(roles => {
             roles.cache.each(role => {
               datas.roles[role.name] = role.id
+              console.log(role.name + ' '+role.id)
               let membres = []
               role.members.each(
                 member => {

@@ -23,7 +23,6 @@ let datas = {
   messageAppel:'',
   listeMembres:[],
   roleTest:'',
-  absents:[],
   roles:[]
 }
 
