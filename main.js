@@ -29,7 +29,7 @@ let datas = {
 
 
 client.on('messageReactionAdd',  (reaction, user) => {
-  if (reaction.emoji.name === '👍' && reaction.message.id === datas.messageAppel.id) {
+  if (reaction.emoji.name === '🦇' && reaction.message.id === datas.messageAppel.id) {
     //messageappel.channel.send(`${user.username} est présent`)
     datas.presents.push(user.id)
   }

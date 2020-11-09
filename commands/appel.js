@@ -10,22 +10,25 @@ module.exports = {
         .then(roles => {
           roles.cache.each(role => {
             if (role.name === args[0]) {
+              datas.roleTest = role
               role.members.each(
                 member => {
                   datas.listeMembres.push(member)
                 }
               )
             }
-          })
-        })
 
-      datas.presents = []
-      datas.roleTest = args[0]
-      message.channel.send('Tous les @' + args[0] + ' au rapport (un pouce si vous êtes là)')
-        .then((sentMessage) => {
-          sentMessage.react('👍')
-          datas.messageAppel = sentMessage
-        })
+          })
+        }).then( () => {
+
+        datas.presents = []
+        console.log(datas.roleTest)
+        message.channel.send(`Tous les <@&${datas.roleTest.id}> au rapport (une 🦇 si vous êtes là)`)
+          .then((sentMessage) => {
+            sentMessage.react('🦇')
+            datas.messageAppel = sentMessage
+          })
+      })
 
 
     } else if (args.length === 2) {
