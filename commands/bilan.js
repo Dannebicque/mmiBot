@@ -9,7 +9,7 @@ module.exports = {
     // console.log(datas.listeMembres[datas.roles[datas.roleTest]])
     let absents = []
 
-    datas.listeMembres[datas.roles[datas.roleTest]].forEach(user => {
+    datas.listeMembres.forEach(user => {
       if (datas.presents.includes(user.id))
       {
         //console.log(user.username + ' présent')

@@ -11,7 +11,6 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`)
   client.commands.set(command.name, command)
-  console.log(client.commands)
 }
 
 client.once('ready', () => {
@@ -30,7 +29,6 @@ let datas = {
 
 
 client.on('messageReactionAdd',  (reaction, user) => {
-  console.log('react')
   if (reaction.emoji.name === '👍' && reaction.message.id === datas.messageAppel.id) {
     //messageappel.channel.send(`${user.username} est présent`)
     datas.presents.push(user.id)
