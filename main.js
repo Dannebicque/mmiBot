@@ -18,19 +18,13 @@ client.once('ready', () => {
 })
 
 client.login(TOKEN)
-let datas = {
-  presents: [],
-  messageAppel:'',
-  listeMembres:[],
-  roleTest:'',
-  roles:[]
-}
+let appels = []
+let messageAuteur = []
 
 
 client.on('messageReactionAdd',  (reaction, user) => {
-  if (reaction.emoji.name === '🦇' && reaction.message.id === datas.messageAppel.id) {
-    //messageappel.channel.send(`${user.username} est présent`)
-    datas.presents.push(user.id)
+  if (reaction.emoji.name === '🦇' && messageAuteur.hasOwnProperty(reaction.message.id) ) {
+    appels[messageAuteur[reaction.message.id]].presents.push(user.id)
   }
 })
 
@@ -43,5 +37,5 @@ client.on('message', message => {
 
   if (!client.commands.has(command)) return
 
-  client.commands.get(command).execute(message, args, datas)
+  client.commands.get(command).execute(message, args, appels,messageAuteur)
 })
